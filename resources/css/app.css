@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pagination .page-link {
+    font-size: 1.5rem; /* Уменьшите размер шрифта, если он слишком большой */
+    padding: 10px; /* Паддинг также может влиять на общий размер кнопок */
+}
