@@ -13,10 +13,6 @@ class GenreSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('genres')->insert([
-            ['name' => 'Драма'],
-            ['name' => 'Комедия'],
-            ['name' => 'Боевик'],
-        ]);
+        \App\Models\Genre::factory()->count(50)->create();
     }
 }
