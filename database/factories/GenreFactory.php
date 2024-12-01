@@ -12,7 +12,7 @@ class GenreFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word, // Генерируем случайное имя жанра
+            'name' => $this->faker->words(2, true), // Генерация случайного названия жанра
         ];
     }
 }

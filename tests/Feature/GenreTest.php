@@ -10,7 +10,6 @@ class GenreTest extends TestCase
 {
     use RefreshDatabase; // Обеспечивает сброс базы данных после каждого теста
 
-    /** @test */
     public function it_can_create_a_genre()
     {
         // Создаем жанр с помощью фабрики
@@ -23,7 +22,7 @@ class GenreTest extends TestCase
         ]);
     }
 
-    /** @test */
+
     public function it_can_list_genres()
     {
         // Создаем 5 жанров
@@ -41,7 +40,7 @@ class GenreTest extends TestCase
         });
     }
 
-    /** @test */
+
     public function it_can_update_a_genre()
     {
         // Создаем жанр
@@ -63,7 +62,7 @@ class GenreTest extends TestCase
         ]);
     }
 
-    /** @test */
+
     public function it_can_delete_a_genre()
     {
         // Создаем жанр
