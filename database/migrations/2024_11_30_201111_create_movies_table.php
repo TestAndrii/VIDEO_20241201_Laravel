@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Запускает миграцию, создающую таблицу 'movies'.
      */
     public function up(): void
     {
         Schema::create('movies', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->boolean('is_published')->default(false);
-            $table->string('poster_link')->default('default.jpg');
-            $table->timestamps();
+            $table->id(); // уникальный идентификатор фильма
+            $table->string('title'); // название фильма
+            $table->boolean('is_published')->default(false); // статус публикации, по умолчанию не опубликован
+            $table->string('poster_link')->default('default.jpg'); // ссылка на постер фильма, по умолчанию используется 'default.jpg'
+            $table->timestamps(); // время создания и обновления записи
         });
     }
 

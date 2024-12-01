@@ -8,5 +8,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::Resource('genres', GenreController::class);
-Route::Resource('movies', MovieController::class);
-Route::post('movies/{id}/publish', [MovieController::class, 'publish']);
+Route::resource('movies', MovieController::class);
+Route::post('movies/{id}/publish', [MovieController::class, 'publish'])->name('movies.publish');
