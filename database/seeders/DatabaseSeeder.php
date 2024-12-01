@@ -2,22 +2,22 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Genre;
+use App\Models\Movie;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Создание 10 жанров
+        Genre::factory()->count(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Создание 10 фильмов
+        Movie::factory()->count(10)->create()->each(function ($movie) {
+            // Привязка случайных жанров к каждому фильму
+            $genres = Genre::all()->random(rand(1, 3)); // Привязываем от 1 до 3 случайных жанров
+            $movie->genres()->attach($genres); // Сохраняем привязку
+        });
     }
 }
