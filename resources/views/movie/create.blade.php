@@ -13,11 +13,6 @@
             </div>
 
             <div class="form-group">
-                <label for="description">Описание</label>
-                <textarea name="description" class="form-control" required></textarea>
-            </div>
-
-            <div class="form-group">
                 <label for="poster">Постер</label>
                 <input type="file" name="poster" class="form-control">
             </div>

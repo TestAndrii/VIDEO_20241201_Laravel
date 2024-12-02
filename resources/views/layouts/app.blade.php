@@ -20,9 +20,6 @@
                     <a class="nav-link" href="{{ route('movies.index') }}">Фильмы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('movies.create') }}">Добавить фильм</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('genres.index') }}">Жанры</a> <!-- Добавленная ссылка -->
                 </li>
             </ul>

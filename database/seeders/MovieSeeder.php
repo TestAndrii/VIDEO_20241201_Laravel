@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Genre;
+use App\Models\Movie;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class MovieSeeder extends Seeder
 {
@@ -13,9 +13,10 @@ class MovieSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('movies')->insert([
-            ['title' => 'Фильм 1'],
-            ['title' => 'Фильм 2'],
-        ]);
+        $genres = Genre::factory()->count(5)->create();  // Создание 5 жанров
+
+        Movie::factory()->count(20)->create()->each(function ($movie) use ($genres) {
+            $movie->genres()->attach($genres->random(rand(1, 3))->pluck('id')); // Присвоение 1-3 жанров каждому фильму
+        });
     }
 }
